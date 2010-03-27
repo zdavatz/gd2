@@ -6,7 +6,7 @@ require 'rake/gempackagetask'
 $:.push 'lib'
 require 'gd2'
 
-PKG_NAME    = 'gd2'
+PKG_NAME    = 'sandofsky-gd2'
 PKG_VERSION = GD2::VERSION
 
 spec = Gem::Specification.new do |s|
@@ -23,8 +23,8 @@ spec = Gem::Specification.new do |s|
   s.rdoc_options     << '--title' << 'Ruby/GD2' << '--charset' << 'utf-8'
   s.extra_rdoc_files  = FileList['README', 'COPYING']
 
-  s.author            = 'Rob Leslie'
-  s.email             = 'rob@mars.org'
+  s.author            = 'Rob Leslie, Forked by Ben Sandofsky'
+  s.email             = 'rob@mars.org, ben@sandofsky.com'
 end
 
 Rake::GemPackageTask.new(spec) do |pkg|

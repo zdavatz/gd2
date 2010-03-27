@@ -24,12 +24,17 @@ require 'dl'
 require 'rbconfig'
 
 module GD2
-  VERSION = '1.1.1'.freeze
+  VERSION = '1.1.2'.freeze
 
   def self.gd_library_name
     case Config::CONFIG['arch']
     when /darwin/
-      'libgd.2.dylib'
+      path = "/opt/local/lib/libgd.2.dylib"
+      if File.exists?(path)
+        path
+      else
+        'libgd.2.dylib'
+      end
     when /mswin32/, /cygwin/
       'bgd.dll'
     else
